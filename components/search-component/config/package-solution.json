@@ -1,0 +1,10 @@
+{
+  "solution": {
+    "name": "search-component-client-side-solution",
+    "id": "958e1943-d187-467c-8e73-90ee46e1a155",
+    "version": "1.0.0.0"
+  },
+  "paths": {
+    "zippedPackage": "solution/search-component.sppkg"
+  }
+}

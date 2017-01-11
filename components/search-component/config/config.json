@@ -1,0 +1,13 @@
+{
+  "entries": [
+    {
+      "entry": "./lib/webparts/searchComponent/SearchComponentWebPart.js",
+      "manifest": "./src/webparts/searchComponent/SearchComponentWebPart.manifest.json",
+      "outputPath": "./dist/search-component.bundle.js"
+    }
+  ],
+  "externals": {},
+  "localizedResources": {
+    "searchComponentStrings": "webparts/searchComponent/loc/{locale}.js"
+  }
+}
