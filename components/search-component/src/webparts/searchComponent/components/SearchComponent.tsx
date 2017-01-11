@@ -1,36 +1,29 @@
 import * as React from 'react';
-import { css, SearchBox } from 'office-ui-fabric-react';
-import styles from './SearchComponent.module.scss';
-import * as pnp from 'sp-pnp-js';
+import { SearchBox, List } from 'office-ui-fabric-react';
 import { ISearchComponentProps } from './ISearchComponentProps';
 
-pnp.setup({
-  headers:{'Accept': 'application/json;odata=verbose'}
-});
+const mockItems: Array<Object> = [{name: 'Name', description:'description'},{name: 'Name', description:'description'},{name: 'Name', description:'description'},{name: 'Name', description:'description'},{name: 'Name', description:'description'}]
 
 export default class SearchComponent extends React.Component<ISearchComponentProps, void> {
   public render(): React.ReactElement<ISearchComponentProps> {
     return (
-      <div className={styles.helloWorld}>
-        <div className={styles.container}>
+      <div>
+        <div>
           <SearchBox></SearchBox>
-          <div className={css('ms-Grid-row ms-bgColor-themeDark ms-fontColor-white', styles.row)}>
-            <div className='ms-Grid-col ms-u-lg10 ms-u-xl8 ms-u-xlPush2 ms-u-lgPush1'>
-              <span className='ms-font-xl ms-fontColor-white'>
-                Welcome to SharePoint!
-              </span>
-              <p className='ms-font-l ms-fontColor-white'>
-                Customize SharePoint experiences using Web Parts.
-              </p>
-              <p className='ms-font-l ms-fontColor-white'>
-                {this.props.description}
-              </p>
-              <a className={css('ms-Button', styles.button)}
-                href='https://github.com/SharePoint/sp-dev-docs/wiki'>
-                <span className='ms-Button-label'>Learn more</span>
-              </a>
-            </div>
-          </div>
+          <List
+            items={mockItems}
+            onRenderCell={(item, index) => {
+              return (
+                <div className='ms-ListBasicExample-itemCell' data-is-focusable={true}>
+                  <div className='ms-ListBasicExample-itemContent'>
+                    <div className='ms-ListBasicExample-itemName ms-font-xl'>{item.name}</div>
+                    <div className='ms-ListBasicExample-itemIndex'>{`Item ${index}`}</div>
+                    <div className='ms-ListBasicExample-itemDesc ms-font-s'>{item.description}</div>
+                  </div>
+                </div>
+              );
+            } }
+            />
         </div>
       </div>
     );

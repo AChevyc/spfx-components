@@ -1,3 +1,3 @@
 export interface ISearchComponentProps {
-  description: string;
+  items: Array<Object>;
 }

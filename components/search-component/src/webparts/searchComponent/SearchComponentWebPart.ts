@@ -16,10 +16,7 @@ export default class SearchComponentWebPart extends BaseClientSideWebPart<ISearc
 
   public render(): void {
     const element: React.ReactElement<ISearchComponentProps > = React.createElement(
-      SearchComponent,
-      {
-        description: this.properties.description
-      }
+      SearchComponent
     );
 
     ReactDom.render(element, this.domElement);
