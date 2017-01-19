@@ -1,20 +1,8 @@
 # Simbiox Sharepoint Componentes utilizando SharePoint Framework
 
-## Estrutura
+## Estrutura do diretorio
 
-    /components
-
-        /hello-world
-            /...
-
-        /search-component
-            /...
-    
-        /...
-            ...
-    .gitignore
-    README.md
-    
+| Cada diretorio dentro da pasta `components/` é um projeto do SharePoint Framework criado com o generator-sharepoint
     
 
 ### Documentação
