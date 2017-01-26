@@ -7,20 +7,19 @@ import {
   PropertyPaneTextField
 } from '@microsoft/sp-webpart-base';
 
+
 import * as strings from 'searchResultsStrings';
 import SearchResults from './components/SearchResults';
 import { ISearchResultsProps } from './components/ISearchResultsProps';
 import { ISearchResultsWebPartProps } from './ISearchResultsWebPartProps';
 
 export default class SearchResultsWebPart extends BaseClientSideWebPart<ISearchResultsWebPartProps> {
-
   public render(): void {
     const element: React.ReactElement<ISearchResultsProps> = React.createElement(SearchResults,
       {
         items: []
       }
     );
-
     ReactDom.render(element, this.domElement);
   }
 
