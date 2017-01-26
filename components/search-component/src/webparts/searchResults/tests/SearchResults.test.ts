@@ -2,7 +2,7 @@
 
 import { assert } from 'chai';
 
-describe('SearchComponentWebPart', () => {
+describe('SearchResultsWebPart', () => {
   it('should do something', () => {
     assert.ok(true);
   });

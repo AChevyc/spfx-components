@@ -1,20 +1,20 @@
 {
   "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
 
-  "id": "bfcdf951-9812-4f15-8c58-329314b1d49a",
-  "alias": "SearchComponentWebPart",
+  "id": "d066b996-b9b1-4dc6-80fc-ecd36f4b74de",
+  "alias": "SearchBarWebPart",
   "componentType": "WebPart",
   "version": "0.0.1",
   "manifestVersion": 2,
 
   "preconfiguredEntries": [{
-    "groupId": "bfcdf951-9812-4f15-8c58-329314b1d49a",
+    "groupId": "d066b996-b9b1-4dc6-80fc-ecd36f4b74de",
     "group": { "default": "Under Development" },
-    "title": { "default": "search-component" },
-    "description": { "default": "search-component description" },
+    "title": { "default": "search-bar" },
+    "description": { "default": "search-bar description" },
     "officeFabricIconFontName": "Page",
     "properties": {
-      "description": "search-component"
+      "description": "search-bar"
     }
   }]
 }

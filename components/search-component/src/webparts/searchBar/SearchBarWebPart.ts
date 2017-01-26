@@ -7,17 +7,15 @@ import {
   PropertyPaneTextField
 } from '@microsoft/sp-webpart-base';
 
-import * as strings from 'searchComponentStrings';
-import SearchComponent from './components/SearchComponent';
-import { ISearchComponentProps } from './components/ISearchComponentProps';
-import { ISearchComponentWebPartProps } from './ISearchComponentWebPartProps';
+import * as strings from 'searchBarStrings';
+import SearchBar from './components/SearchBar';
+import { ISearchBarProps } from './components/ISearchBarProps';
+import { ISearchBarWebPartProps } from './ISearchBarWebPartProps';
 
-export default class SearchComponentWebPart extends BaseClientSideWebPart<ISearchComponentWebPartProps> {
+export default class SearchBarWebPart extends BaseClientSideWebPart<ISearchBarWebPartProps> {
 
   public render(): void {
-    const element: React.ReactElement<ISearchComponentProps > = React.createElement(
-      SearchComponent
-    );
+    const element: React.ReactElement<ISearchBarProps> = React.createElement(SearchBar);
 
     ReactDom.render(element, this.domElement);
   }

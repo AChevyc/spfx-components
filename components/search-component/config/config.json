@@ -1,13 +1,20 @@
 {
   "entries": [
     {
-      "entry": "./lib/webparts/searchComponent/SearchComponentWebPart.js",
-      "manifest": "./src/webparts/searchComponent/SearchComponentWebPart.manifest.json",
-      "outputPath": "./dist/search-component.bundle.js"
+      "entry": "./lib/webparts/searchResults/SearchResultsWebPart.js",
+      "manifest": "./src/webparts/searchResults/SearchResultsWebPart.manifest.json",
+      "outputPath": "./dist/search-results.bundle.js"
+    },
+    {
+      "entry": "./lib/webparts/searchBar/SearchBarWebPart.js",
+      "manifest": "./src/webparts/searchBar/SearchBarWebPart.manifest.json",
+      "outputPath": "./dist/search-bar.bundle.js"
     }
   ],
   "externals": {},
   "localizedResources": {
-    "searchComponentStrings": "webparts/searchComponent/loc/{locale}.js"
+    "searchComponentStrings": "webparts/searchComponent/loc/{locale}.js",
+    "searchResultsStrings": "webparts/searchResults/loc/{locale}.js",
+    "searchBarStrings": "webparts/searchBar/loc/{locale}.js"
   }
 }
