@@ -14,7 +14,7 @@ export default class SearchBar extends React.Component<ISearchBarProps, any> {
 
     this.state = {
       showPanel: false,
-      query: '',
+      newValue: '',
       response: pnp.SearchResults
     };
   }
@@ -22,13 +22,12 @@ export default class SearchBar extends React.Component<ISearchBarProps, any> {
     this.setState({ showPanel: !this.state.showPanel });
   }
   public search(): void {
-    debugger;
-    let query: pnp.SearchQuery = { Querytext: '*' }
-
+    let { newValue } = this.state;
+    let query: pnp.SearchQuery = { Querytext: newValue || '*' }
     pnp.sp.search(query).then(this.resolve.bind(this))
   }
   public resolve(response: pnp.SearchResults): any {
-    debugger
+    console.log(response);
     this.setState({
       response
     })
@@ -39,7 +38,7 @@ export default class SearchBar extends React.Component<ISearchBarProps, any> {
     return (
       <section>
         <SearchBox
-          ref='text'
+          onChange={(newValue) => this.setState({ query: newValue })}
           onSearch={search.bind(this)}></SearchBox>
         <Button
           onClick={show.bind(this)}
