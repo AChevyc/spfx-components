@@ -7,18 +7,25 @@ import {
   PropertyPaneTextField
 } from '@microsoft/sp-webpart-base';
 
+import { setup } from 'sp-pnp-js';
 import * as strings from 'searchComponentStrings';
 import SearchComponent from './components/SearchComponent';
 import { ISearchComponentProps } from './components/ISearchComponentProps';
 import { ISearchComponentWebPartProps } from './ISearchComponentWebPartProps';
 
-export default class SearchComponentWebPart extends BaseClientSideWebPart<ISearchComponentWebPartProps> {
+setup({
+  headers: {
+    "Accept": "application/json; odata=verbose"
+  }
+})
 
+/* tslint:disable */
+
+export default class SearchComponentWebPart extends BaseClientSideWebPart<ISearchComponentWebPartProps> {
   public render(): void {
-    const element: React.ReactElement<ISearchComponentProps > = React.createElement(
+    const element: React.ReactElement<ISearchComponentProps> = React.createElement(
       SearchComponent
     );
-
     ReactDom.render(element, this.domElement);
   }
 
