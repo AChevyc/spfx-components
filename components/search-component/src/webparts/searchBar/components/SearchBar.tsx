@@ -11,6 +11,15 @@ export default class SearchBar extends React.Component<ISearchBarProps, any> {
       headers: { Accept: 'application/json;odata=verbose' }
     });
 
+    pnp.sp.web.lists.ensure('ListTest').then(response => {
+      response.list.items.add({ Title: 'adding' })
+        .then(added => {
+          response.list.items.get().then(items => {
+            console.log(items)
+          })
+        })
+    })
+
     this.state = {
       showPanel: false,
       newValue: ''
