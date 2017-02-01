@@ -7,15 +7,13 @@ import { ISearchBarProps } from './ISearchBarProps';
 export default class SearchBar extends React.Component<ISearchBarProps, any> {
   constructor() {
     super();
-
     pnp.setup({
       headers: { Accept: 'application/json;odata=verbose' }
     });
 
     this.state = {
       showPanel: false,
-      newValue: '',
-      response: pnp.SearchResults
+      newValue: ''
     };
   }
   public show(): void {
@@ -27,10 +25,7 @@ export default class SearchBar extends React.Component<ISearchBarProps, any> {
     pnp.sp.search(query).then(this.resolve.bind(this))
   }
   public resolve(response: pnp.SearchResults): any {
-    console.log(response);
-    this.setState({
-      response
-    })
+    this.setState({ store: response })
   }
   public render(): React.ReactElement<ISearchBarProps> {
     let { query, showPanel } = this.state;
@@ -43,6 +38,9 @@ export default class SearchBar extends React.Component<ISearchBarProps, any> {
         <Button
           onClick={show.bind(this)}
           >Refine results</Button>
+        <Button
+          onClick={search.bind(this)}
+          >Search</Button>
         <Panel
           isOpen={showPanel}
           headerText='Apply Filter'

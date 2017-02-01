@@ -6,6 +6,8 @@ import { ISearchResultsProps } from './ISearchResultsProps';
 export default class SearchResults extends React.Component<ISearchResultsProps, any> {
   constructor() {
     super();
+    this.state = {
+    }
   }
   public render(): React.ReactElement<ISearchResultsProps> {
     let { items } = this.props;
